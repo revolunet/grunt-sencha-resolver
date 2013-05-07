@@ -48,7 +48,7 @@ An object that define mapping of caught scripts, using regexp.
 
 #### options.skipSenchaCore
 Type: `Boolean`
-Default value: `'true'`
+Default value: `'false'`
 
 A boolean that tell the task to delete references of any ExtJS core library (Ext-debug.js, Ext-all.js etc...).
 

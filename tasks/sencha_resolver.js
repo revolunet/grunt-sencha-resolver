@@ -22,7 +22,7 @@ module.exports = function(grunt) {
       urlMappings: false
     });
 
-    grunt.log.debug("Using this options:");
+    grunt.log.debug("Using options:");
     grunt.log.debug();
     grunt.log.debug("url:\t" + options.url);
     grunt.log.debug("skipSenchaCore:\t" + options.skipSenchaCore);
