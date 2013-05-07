@@ -3,7 +3,7 @@
 > Resolve dependencies of a Sencha ExtJS project.
 
 ## Getting Started
-This plugin requires Grunt `~0.4.1`
+This plugin requires Grunt `~0.4.1` and [grunt-lib-phantomjs](https://github.com/gruntjs/grunt-lib-phantomjs) `~0.3.0`
 
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
@@ -28,55 +28,44 @@ grunt.initConfig({
     options: {
       // Task-specific options go here.
     },
-    your_target: {
-      // Target-specific file lists and/or options go here.
-    },
   },
 })
 ```
 
 ### Options
 
-#### options.separator
+#### options.url
 Type: `String`
-Default value: `',  '`
+Default value: `'http://127.0.0.1'`
 
-A string value that is used to do something with whatever.
+This is the URL to call to check Sencha ExtJS dependencies (scripts files).
 
-#### options.punctuation
-Type: `String`
-Default value: `'.'`
+#### options.urlMapping
+Type: `Object`
+Default value: `'{}'`
 
-A string value that is used to do something else with whatever else.
+An object that define mapping of caught scripts, using regexp.
+
+#### options.skipSenchaCore
+Type: `Boolean`
+Default value: `'true'`
+
+A boolean that tell the task to delete references of any ExtJS core library (Ext-debug.js, Ext-all.js etc...).
 
 ### Usage Examples
 
-#### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
-
-```js
-grunt.initConfig({
-  sencha_resolver: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-})
-```
-
-#### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
+In this example, we target an url of a running ExtJS project and extract all it's script dependencies. We then map to local storage path some of the obtained URLs, using regexp. We also want to remove the Ext-all-debug.js library.
 
 ```js
 grunt.initConfig({
   sencha_resolver: {
     options: {
-      separator: ': ',
-      punctuation: ' !!!',
-    },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
+      url: 'http://127.0.0.1/awesomeExtJSproject',
+      urlMappings: {
+        '.*www/': '/home/awesome_developper/dev/awesome_extjs_project/www/',
+        '\\?(.*)': ''
+      },
+      skipSenchaCore: true
     },
   },
 })
