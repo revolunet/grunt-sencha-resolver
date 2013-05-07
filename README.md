@@ -3,7 +3,7 @@
 > Resolve dependencies of a Sencha ExtJS project.
 
 ## Getting Started
-This plugin requires Grunt `~0.4.1` and [grunt-lib-phantomjs](https://github.com/gruntjs/grunt-lib-phantomjs) `~0.3.0`
+This plugin requires Grunt `~0.4.1` and [Phantomjs](https://github.com/Obvious/phantomjs) `~1.9.0`
 
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
