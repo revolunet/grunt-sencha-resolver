@@ -1,0 +1,44 @@
+{
+  "name": "grunt-sencha-resolver",
+  "description": "Resolve dependencies of a Sencha ExtJS project.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/revolunet/grunt-sencha-resolver",
+  "author": {
+    "name": "LaurentMox",
+    "email": "laurent@revolunet.com",
+    "url": "http://www.revolunet.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/revolunet/grunt-sencha-resolver.git"
+  },
+  "bugs": {
+    "url": "https://github.com/revolunet/grunt-sencha-resolver/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/revolunet/grunt-sencha-resolver/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.1.1",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-nodeunit": "~0.1.2",
+    "grunt": "~0.4.1"
+  },
+  "peerDependencies": {
+    "grunt-lib-phantomjs": "~0.3.0",
+    "grunt": "~0.4.1"
+  },
+  "keywords": [
+    "gruntplugin"
+  ]
+}
