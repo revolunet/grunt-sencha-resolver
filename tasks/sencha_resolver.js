@@ -37,10 +37,12 @@ module.exports = function(grunt) {
     }
 
     var spawn_options = {
+      // ToDo: Ugly ugly paths, need to be changed
+
       // PhantomJS binary path.
       cmd: './node_modules/grunt-lib-phantomjs/node_modules/phantomjs/bin/phantomjs',
       grunt: false,
-      args: ['dep/resolve_project.js', options.url, options.jsUrl, options.jsLocal],
+      args: ['node_modules/grunt-sencha-resolver/tasks/dep/resolve_project.js', options.url, options.jsUrl, options.jsLocal],
     };
 
     function doneFunction(error, result, code) {
